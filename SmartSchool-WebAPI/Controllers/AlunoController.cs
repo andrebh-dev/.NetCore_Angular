@@ -21,7 +21,7 @@ namespace SmartSchool_WebAPI.Controllers
         {
             try
             {
-                var result = await _repo.GetAllAlunosAsync(true);
+                var result = await _repo.GetAllAlunosAsync(false);
                 return Ok(result);
             }
             catch(Exception e)
@@ -30,12 +30,12 @@ namespace SmartSchool_WebAPI.Controllers
             }
         }
 
-        [HttpGet("{AlunoId}")]
-        public async Task<IActionResult> GetByAlunoId(int AlunoId)
+        [HttpGet("{alunoId}")]
+        public async Task<IActionResult> GetByAlunoId(int alunoId)
         {
             try
             {
-                var result = await _repo.GetAlunoAsyncById(AlunoId, true);
+                var result = await _repo.GetAlunoAsyncById(alunoId, true);
 
                 return Ok(result);
             }
@@ -45,7 +45,7 @@ namespace SmartSchool_WebAPI.Controllers
             }
         }
 
-        [HttpGet("ByDisciplina/{disciplina}")]
+        [HttpGet("ByDisciplina/{disciplinaId}")]
         public async Task<IActionResult> GetByDisciplinaId(int disciplinaId)
         {
             try
@@ -79,12 +79,12 @@ namespace SmartSchool_WebAPI.Controllers
             return BadRequest();
         }
 
-        [HttpPut("{AlunoId}")]
-        public async Task<IActionResult> put(int AlunoId, Aluno model)
+        [HttpPut("{alunoId}")]
+        public async Task<IActionResult> put(int alunoId, Aluno model)
         {
             try
             {
-                var aluno =await _repo.GetAlunoAsyncById(AlunoId, false);
+                var aluno = await _repo.GetAlunoAsyncById(alunoId, false);
                 if(aluno == null)
                 {
                     return NotFound();
@@ -105,22 +105,22 @@ namespace SmartSchool_WebAPI.Controllers
             return BadRequest();
         }
 
-        [HttpDelete("{AlunoId}")]
-        public async Task<IActionResult> delete(int AlunoId)
+        [HttpDelete("{alunoId}")]
+        public async Task<IActionResult> delete(int alunoId)
         {
             try
             {
-                var aluno =await _repo.GetAlunoAsyncById(AlunoId, false);
+                var aluno =await _repo.GetAlunoAsyncById(alunoId, false);
                 if(aluno == null)
                 {
                     return NotFound();
                 }
                 
-                _repo.Update(aluno);
+                _repo.Delete(aluno);
 
                 if(await _repo.SaveChangesAsync())
                 {
-                    return Ok("Deletado");
+                    return Ok(new {message = "Deletado"});
                 } 
             }            
             catch(Exception e)
