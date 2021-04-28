@@ -13,12 +13,12 @@ namespace SmartSchool_WebAPI.Models
         public Aluno()
         {
         }
-        public Aluno(int id, string nome, string sobrenome, string telefone)
+        public Aluno(int id, string nome, string sobrenome, string telefone)        
         {            
-            Id = id;
-            Nome = nome;
-            Sobrenome = sobrenome;
-            Telefone = telefone;
+            this.Id = id;
+            this.Nome = nome;
+            this.Sobrenome = sobrenome;
+            this.Telefone = telefone;
         }
     }
 }

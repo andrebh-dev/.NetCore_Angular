@@ -1750,11 +1750,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AndréSilvaCoutinho\\Documents\\AngularNETCORE\\SmartSchool-WebAPI\\SmartScool-WebAPI.csproj",
+      "projectUniqueName": "c:\\Users\\AndréSilvaCoutinho\\Documents\\AngularNETCORE\\SmartSchool-WebAPI\\SmartScool-WebAPI.csproj",
       "projectName": "SmartScool-WebAPI",
-      "projectPath": "C:\\Users\\AndréSilvaCoutinho\\Documents\\AngularNETCORE\\SmartSchool-WebAPI\\SmartScool-WebAPI.csproj",
+      "projectPath": "c:\\Users\\AndréSilvaCoutinho\\Documents\\AngularNETCORE\\SmartSchool-WebAPI\\SmartScool-WebAPI.csproj",
       "packagesPath": "C:\\Users\\AndréSilvaCoutinho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AndréSilvaCoutinho\\Documents\\AngularNETCORE\\SmartSchool-WebAPI\\obj\\",
+      "outputPath": "c:\\Users\\AndréSilvaCoutinho\\Documents\\AngularNETCORE\\SmartSchool-WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

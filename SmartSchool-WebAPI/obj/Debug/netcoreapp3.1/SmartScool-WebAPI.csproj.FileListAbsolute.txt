@@ -1,0 +1,5 @@
+C:\Users\AndréSilvaCoutinho\Documents\AngularNETCORE\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartScool-WebAPI.csprojAssemblyReference.cache
+C:\Users\AndréSilvaCoutinho\Documents\AngularNETCORE\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartScool-WebAPI.AssemblyInfoInputs.cache
+C:\Users\AndréSilvaCoutinho\Documents\AngularNETCORE\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartScool-WebAPI.AssemblyInfo.cs
+C:\Users\AndréSilvaCoutinho\Documents\AngularNETCORE\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartScool-WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\AndréSilvaCoutinho\Documents\AngularNETCORE\SmartSchool-WebAPI\obj\Debug\netcoreapp3.1\SmartScool-WebAPI.MvcApplicationPartsAssemblyInfo.cache

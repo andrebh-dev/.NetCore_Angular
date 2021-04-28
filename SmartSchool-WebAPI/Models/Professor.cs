@@ -15,8 +15,8 @@ namespace SmartSchool_WebAPI.Models
 
         public Professor(int id, string nome)
         {
-            Id = id;
-            Nome = nome;
+            this.Id = id;
+            this.Nome = nome;
             
         }
     }

@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SmartSchool_WebAPI.Data;
 
-namespace SmartScool_WebAPI
+namespace SmartShcool_WebAPI
 {
     public class Startup
     {
@@ -21,18 +21,19 @@ namespace SmartScool_WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(
-                x => x.UseSqlite(Configuration.GetConnectionString("DefaultConn"))
+             var connection = Configuration["ConexaoSqlite:SqliteConnectionString"];
+            services.AddDbContext<DataContext>(options =>
+                options.UseSqlite(connection)
             );
 
             services.AddControllers()
                     .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = 
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-            services.AddScoped<IRepository, Repository>();
+            services.AddScoped<IRepository, Repository>();            
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SmartScool_WebAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SmartSchool_WebAPI", Version = "v1" });
             });
         }
 
@@ -43,7 +44,7 @@ namespace SmartScool_WebAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SmartScool_WebAPI v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SmartSchool_WebAPI v1"));
             }
 
             // app.UseHttpsRedirection();
@@ -52,7 +53,7 @@ namespace SmartScool_WebAPI
 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

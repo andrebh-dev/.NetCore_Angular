@@ -8,7 +8,7 @@ namespace SmartSchool_WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AlunoController :  ControllerBase
+    public class AlunoController : ControllerBase
     {
         private readonly IRepository _repo;
 
@@ -21,7 +21,7 @@ namespace SmartSchool_WebAPI.Controllers
         {
             try
             {
-                var result = await _repo.GetAllAlunosAsync(false);
+                var result = await _repo.GetAllAlunosAsync(true);
                 return Ok(result);
             }
             catch(Exception e)
@@ -30,12 +30,12 @@ namespace SmartSchool_WebAPI.Controllers
             }
         }
 
-        [HttpGet("{alunoId}")]
-        public async Task<IActionResult> GetByAlunoId(int alunoId)
+        [HttpGet("{AlunoId}")]
+        public async Task<IActionResult> GetByAlunoId(int AlunoId)
         {
             try
             {
-                var result = await _repo.GetAlunoAsyncById(alunoId, true);
+                var result = await _repo.GetAlunoAsyncById(AlunoId, true);
 
                 return Ok(result);
             }
@@ -60,7 +60,7 @@ namespace SmartSchool_WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Aluno model)
+        public async Task<IActionResult> post(Aluno model)
         {
             try
             {
@@ -110,7 +110,7 @@ namespace SmartSchool_WebAPI.Controllers
         {
             try
             {
-                var aluno =await _repo.GetAlunoAsyncById(alunoId, false);
+                var aluno = await _repo.GetAlunoAsyncById(alunoId, false);
                 if(aluno == null)
                 {
                     return NotFound();

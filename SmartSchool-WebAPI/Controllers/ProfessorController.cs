@@ -32,12 +32,12 @@ namespace SmartSchool_WebAPI.Controllers
             }
         }
 
-        [HttpGet("{professorId}")]
-        public async Task<IActionResult> GetByProfessorId(int professorId)
+        [HttpGet("{ProfessorId}")]
+        public async Task<IActionResult> GetByProfessorId(int ProfessorId)
         {
             try
             {
-                var result = await _repo.GetProfessorAsyncById(professorId, true);
+                var result = await _repo.GetProfessorAsyncById(ProfessorId, true);
                 
                 return Ok(result);
             }
@@ -52,7 +52,7 @@ namespace SmartSchool_WebAPI.Controllers
         {
             try
             {
-                var result = await _repo.GetProfessoresAsyncByAlunoId(alunoId, false);
+                var result = await _repo.GetProfessoresAsyncByAlunoId(alunoId, true);
                 return Ok(result);
             }
             catch (Exception ex)

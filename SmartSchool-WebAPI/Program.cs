@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using SmartShcool_WebAPI;
 
-
-namespace SmartScool_WebAPI
+namespace SmartSchool_WebAPI
 {
     public class Program
     {

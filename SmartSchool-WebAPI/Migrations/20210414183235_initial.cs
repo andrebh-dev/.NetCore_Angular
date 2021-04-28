@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SmartScool_WebAPI.Migrations
+namespace SmartSchool_WebAPI.Migrations
 {
     public partial class initial : Migration
     {
@@ -10,24 +10,24 @@ namespace SmartScool_WebAPI.Migrations
                 name: "Alunos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    Sobrenome = table.Column<string>(type: "TEXT", nullable: true),
-                    Telefone = table.Column<string>(type: "TEXT", nullable: true)
+                    Nome = table.Column<string>(nullable: true),
+                    Sobrenome = table.Column<string>(nullable: true),
+                    Telefone = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Alunos", x => x.Id);
+                    table.PrimaryKey("PK_Alunos", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Professores",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true)
+                    Nome = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -38,10 +38,10 @@ namespace SmartScool_WebAPI.Migrations
                 name: "Disciplinas",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Nome = table.Column<string>(type: "TEXT", nullable: true),
-                    ProfessorId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Nome = table.Column<string>(nullable: true),
+                    ProfessorId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,8 +58,8 @@ namespace SmartScool_WebAPI.Migrations
                 name: "AlunosDisciplinas",
                 columns: table => new
                 {
-                    AlunoId = table.Column<int>(type: "INTEGER", nullable: false),
-                    DisciplinaId = table.Column<int>(type: "INTEGER", nullable: false)
+                    AlunoId = table.Column<int>(nullable: false),
+                    DisciplinaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
